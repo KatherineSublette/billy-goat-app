@@ -3,8 +3,10 @@
     "",
     "\\e2e",
     "\\e2e\\src",
-    "\\src"
+    "\\src",
+    "\\src\\app",
+    "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\main.ts",
+  "SelectedNode": "\\src\\app\\app.component.html",
   "PreviewInSolutionExplorer": false
 }
