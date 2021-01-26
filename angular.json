@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "slider-app": {
+    "billy-goats-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/slider-app",
+            "outputPath": "dist/billy-goats-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "slider-app:build"
+            "browserTarget": "billy-goats-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "slider-app:build:production"
+              "browserTarget": "billy-goats-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "slider-app:build"
+            "browserTarget": "billy-goats-app:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "slider-app-e2e": {
+    "billy-goats-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "slider-app:serve"
+            "devServerTarget": "billy-goats-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "slider-app:serve:production"
+              "devServerTarget": "billy-goats-app:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "slider-app"
+  "defaultProject": "billy-goats-app"
 }
