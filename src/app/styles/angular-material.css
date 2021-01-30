@@ -1294,7 +1294,7 @@ md-checkbox {
     [dir=rtl] .md-contact-suggestion .md-contact-name {
       margin-left: auto;
       margin-right: 8px; }
-  .md-contact-suggestion .md-contact-name, .md-contact-suggestion .md-contact-email {
+  .md-contact-suggestion .md-contact-name, .md-contact-suggestion .md-contact-username {
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis; }
@@ -1400,12 +1400,12 @@ md-checkbox {
       margin: 8px 0 0 8px; }
     [dir=rtl] .md-chips .md-chip-input-container {
       float: right; }
-    .md-chips .md-chip-input-container input:not([type]), .md-chips .md-chip-input-container input[type="email"], .md-chips .md-chip-input-container input[type="number"], .md-chips .md-chip-input-container input[type="tel"], .md-chips .md-chip-input-container input[type="url"], .md-chips .md-chip-input-container input[type="text"] {
+    .md-chips .md-chip-input-container input:not([type]), .md-chips .md-chip-input-container input[type="username"], .md-chips .md-chip-input-container input[type="number"], .md-chips .md-chip-input-container input[type="tel"], .md-chips .md-chip-input-container input[type="url"], .md-chips .md-chip-input-container input[type="text"] {
       border: 0;
       height: 32px;
       line-height: 32px;
       padding: 0; }
-      .md-chips .md-chip-input-container input:not([type]):focus, .md-chips .md-chip-input-container input[type="email"]:focus, .md-chips .md-chip-input-container input[type="number"]:focus, .md-chips .md-chip-input-container input[type="tel"]:focus, .md-chips .md-chip-input-container input[type="url"]:focus, .md-chips .md-chip-input-container input[type="text"]:focus {
+      .md-chips .md-chip-input-container input:not([type]):focus, .md-chips .md-chip-input-container input[type="username"]:focus, .md-chips .md-chip-input-container input[type="number"]:focus, .md-chips .md-chip-input-container input[type="tel"]:focus, .md-chips .md-chip-input-container input[type="url"]:focus, .md-chips .md-chip-input-container input[type="text"]:focus {
         outline: none; }
     .md-chips .md-chip-input-container md-autocomplete, .md-chips .md-chip-input-container md-autocomplete-wrap {
       background: transparent;
@@ -2304,7 +2304,7 @@ md-input-container {
   md-input-container input[type="time"],
   md-input-container input[type="week"],
   md-input-container input[type="number"],
-  md-input-container input[type="email"],
+  md-input-container input[type="username"],
   md-input-container input[type="url"],
   md-input-container input[type="search"],
   md-input-container input[type="tel"],

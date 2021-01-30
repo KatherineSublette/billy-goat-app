@@ -1,0 +1,12 @@
+<h1 style="text-align:center"></h1>
+    <div class="login">
+      <h2 class="login-header">Log in</h2>
+      <div class="login-container">
+        <input type="username" placeholder="Username" (input)="username=$event.target.value">
+        <input type="password" placeholder="Password" (input)="password=$event.target.value">
+        <p>
+          <button class="button" type="submit" (click)="onSubmit()">Log In</button>
+        </p>
+      </div>
+      <div *ngIf="isWrong" class="have-error">alas and alack tis an error</div>
+  </div>
