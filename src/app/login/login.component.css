@@ -40,6 +40,11 @@
   padding: 12px;
 }
 
+.login-error {
+  border-color: rgb(216, 12, 12);
+  color: rgb(230, 14, 14);
+}
+
 .login input {
   box-sizing: border-box;
   display: block;

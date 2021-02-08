@@ -7,6 +7,11 @@
         <p>
           <button class="button" type="submit" (click)="onSubmit()">Log In</button>
         </p>
+        <div class="login-error" [hidden] = "!isWrong">
+          <p>
+          Invalid Username or Password
+          </p>
+        </div>
         <p>
           Don't have an account? <button class="button" (click)="onSignUp()">Sign Up</button>
         </p>

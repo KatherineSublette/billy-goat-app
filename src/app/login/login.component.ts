@@ -10,16 +10,12 @@ import { Router } from  '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor( private router: Router, private formBuilder: FormBuilder ) { }
-  authForm: FormGroup;
-  correctForm: FormGroup
   isWrong  =  false;
   username: string;
   password: string;
 
   ngOnInit() {
-}
-
-  get formControls() { return this.authForm.controls; }
+  }
 
   onSubmit(): void{
     if(this.username === 'hello' && this.password === 'world'){
@@ -32,6 +28,10 @@ export class LoginComponent implements OnInit {
 
   onSignUp(): void{
     this.router.navigateByUrl('/sign-up');
+  }
+
+  checkIsWrong(): boolean{
+    return this.isWrong;
   }
 
 }
