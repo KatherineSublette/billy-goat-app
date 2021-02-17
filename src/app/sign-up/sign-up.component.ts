@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {MatRadioModule} from '@angular/material/radio';
+import { Router } from  '@angular/router';
+
+interface Type {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-sign-up',
@@ -7,9 +14,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+  fullname: string;
+  username: string;
+  password: string;
+  email: string;
 
   ngOnInit(): void {
+  }
+
+  onSubmit(): void{
+    
   }
 
 }

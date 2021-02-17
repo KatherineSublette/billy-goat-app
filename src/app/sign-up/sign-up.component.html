@@ -10,8 +10,14 @@
         <input (input)="password=$event.target.value">
         <div class = sign-up-text>Email</div>
         <input type="email" (input)="email=$event.target.value">
+        <div>Sign up as Guest or Guide?</div>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="guest">Guest</mat-radio-button>
+          <mat-radio-button value="guide">Guide</mat-radio-button>
+        </mat-radio-group>
         <p>
             <button class="button" type="submit" (click)="onSubmit()">Sign Up</button>
-          </p>
+        </p>
       </div>
+
   </div>
