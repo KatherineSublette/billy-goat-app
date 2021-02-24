@@ -1,0 +1,25 @@
+<p>
+    <mat-toolbar color="primary">
+    <span class="flexExpand">Billy Goats</span>
+    <button md-raised-button [ngClass]="{'icon-button-select': isHome, 'icon-button': !isHome}" fxLayoutAlign="flex-end center" (click)="toggleHome()">
+        <mat-icon>home</mat-icon>
+        <div>Home</div>
+    </button>
+    <button md-raised-button [ngClass]="{'icon-button-select': isOldJob, 'icon-button': !isOldJob}" fxLayoutAlign="flex-end center" (click)="toggleOldJob()">
+        <mat-icon>history</mat-icon>
+        <div>Previous Jobs</div>
+    </button>
+    <button md-raised-button [ngClass]="{'icon-button-select': isMessages, 'icon-button': !isMessages}" fxLayoutAlign="flex-end center" (click)="toggleMessages()">
+        <mat-icon>message</mat-icon>
+        <div>Messages</div>
+    </button>
+    <button md-raised-button [ngClass]="{'icon-button-select': isProfile, 'icon-button': !isProfile}" fxLayoutAlign="flex-end center" (click)="toggleProfile()">
+     <mat-icon>account_circle</mat-icon>
+     <div>Profile</div>
+    </button>
+  </mat-toolbar>
+</p>
+<app-guide-home-page *ngIf="isHome"></app-guide-home-page>
+<app-guide-old-jobs-page *ngIf="isOldJob"></app-guide-old-jobs-page>
+<app-guide-messages-page *ngIf="isMessages"></app-guide-messages-page>
+<app-guide-profile-page *ngIf="isProfile"></app-guide-profile-page>

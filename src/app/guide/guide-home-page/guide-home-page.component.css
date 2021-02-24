@@ -1,0 +1,26 @@
+.home-page {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px;
+}
+
+.home-page-header,
+.home-page p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.home-page-header {
+  background: rgb(12, 77, 129);
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.home-page-container {
+  background: #ebebeb;
+  padding: 12px;
+}

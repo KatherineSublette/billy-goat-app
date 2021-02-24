@@ -1,0 +1,26 @@
+.profile {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px;
+}
+
+.profile-header,
+.profile p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.profile-header {
+  background: rgb(12, 77, 129);
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.profile-container {
+  background: #ebebeb;
+  padding: 12px;
+}

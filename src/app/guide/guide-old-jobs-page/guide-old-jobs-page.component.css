@@ -1,0 +1,26 @@
+.old-jobs {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px;
+}
+
+.old-jobs-header,
+.old-jobs p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.old-jobs-header {
+  background: rgb(12, 77, 129);
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.old-jobs-container {
+  background: #ebebeb;
+  padding: 12px;
+}

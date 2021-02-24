@@ -17,8 +17,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void{
-    if(this.username === 'hello' && this.password === 'world'){
-      this.router.navigateByUrl('/user');
+    if(this.username === 'guest' && this.password === 'helloworld'){
+      this.router.navigateByUrl('/guest');
+    }
+    else if(this.username === 'guide' && this.password === 'helloworld'){
+      this.router.navigateByUrl('/guide');
     }
     else{
       this.isWrong = true;
