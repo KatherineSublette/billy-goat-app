@@ -1,0 +1,27 @@
+.mat-toolbar.mat-primary {
+  background: rgb(1, 29, 51);
+  color: #fff;
+}
+
+.icon-button {
+  background: rgb(1, 29, 51);
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.icon-button-select {
+  background: rgb(15, 66, 107);
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.flexExpand {
+  flex: 1 1 auto;
+}
+
+*:focus {
+  outline: none !important;
+  border: 0 !important;
+}

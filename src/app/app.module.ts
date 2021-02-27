@@ -15,10 +15,8 @@ import { AppComponent } from './app.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { GuestComponent } from './guest/guest.component';
 import { GuideComponent } from './guide/guide.component';
-import { GuideHomePageComponent } from './guide/guide-home-page/guide-home-page.component';
-import { GuideOldJobsPageComponent } from './guide/guide-old-jobs-page/guide-old-jobs-page.component';
-import { GuideMessagesPageComponent } from './guide/guide-messages-page/guide-messages-page.component';
-import { GuideProfilePageComponent } from './guide/guide-profile-page/guide-profile-page.component';
+
+import { SharedModule } from './shared/shared.module'
 
 @NgModule({
   declarations: [
@@ -26,10 +24,6 @@ import { GuideProfilePageComponent } from './guide/guide-profile-page/guide-prof
     SignUpComponent,
     GuestComponent,
     GuideComponent,
-    GuideHomePageComponent,
-    GuideOldJobsPageComponent,
-    GuideMessagesPageComponent,
-    GuideProfilePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +36,8 @@ import { GuideProfilePageComponent } from './guide/guide-profile-page/guide-prof
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatTabsModule
+    MatTabsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

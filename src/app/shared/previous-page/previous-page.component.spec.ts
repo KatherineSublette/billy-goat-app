@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GuideOldJobsPageComponent } from './guide-old-jobs-page.component';
+import { PreviousPageComponent } from './previous-page.component';
 
-describe('GuideOldJobsPageComponent', () => {
-  let component: GuideOldJobsPageComponent;
-  let fixture: ComponentFixture<GuideOldJobsPageComponent>;
+describe('PreviousPageComponent', () => {
+  let component: PreviousPageComponent;
+  let fixture: ComponentFixture<PreviousPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GuideOldJobsPageComponent ]
+      declarations: [ PreviousPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GuideOldJobsPageComponent);
+    fixture = TestBed.createComponent(PreviousPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

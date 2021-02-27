@@ -1,1 +1,25 @@
-<p>guest works!</p>
+<p>
+    <mat-toolbar color="primary">
+    <span class="flexExpand">Billy Goats</span>
+    <button md-raised-button [ngClass]="{'icon-button-select': isHome, 'icon-button': !isHome}" fxLayoutAlign="flex-end center" (click)="toggleHome()">
+        <mat-icon>home</mat-icon>
+        <div>Home</div>
+    </button>
+    <button md-raised-button [ngClass]="{'icon-button-select': isOldTrip, 'icon-button': !isOldTrip}" fxLayoutAlign="flex-end center" (click)="toggleOldTrip()">
+        <mat-icon>history</mat-icon>
+        <div>Previous Trips</div>
+    </button>
+    <button md-raised-button [ngClass]="{'icon-button-select': isMessages, 'icon-button': !isMessages}" fxLayoutAlign="flex-end center" (click)="toggleMessages()">
+        <mat-icon>message</mat-icon>
+        <div>Messages</div>
+    </button>
+    <button md-raised-button [ngClass]="{'icon-button-select': isProfile, 'icon-button': !isProfile}" fxLayoutAlign="flex-end center" (click)="toggleProfile()">
+     <mat-icon>account_circle</mat-icon>
+     <div>Profile</div>
+    </button>
+  </mat-toolbar>
+</p>
+<app-home-page *ngIf="isHome" [text]="homeText"></app-home-page>
+<app-previous-page *ngIf="isOldTrip" [header]="oldTripsHeader" [text]="oldTripsText"></app-previous-page>
+<app-messages-page *ngIf="isMessages"></app-messages-page>
+<app-profile-page *ngIf="isProfile"></app-profile-page>

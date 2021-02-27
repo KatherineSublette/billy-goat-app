@@ -19,7 +19,7 @@
     </button>
   </mat-toolbar>
 </p>
-<app-guide-home-page *ngIf="isHome"></app-guide-home-page>
-<app-guide-old-jobs-page *ngIf="isOldJob"></app-guide-old-jobs-page>
-<app-guide-messages-page *ngIf="isMessages"></app-guide-messages-page>
-<app-guide-profile-page *ngIf="isProfile"></app-guide-profile-page>
+<app-home-page *ngIf="isHome" [text]="homeText"></app-home-page>
+<app-previous-page *ngIf="isOldJob" [header]="oldJobsHeader" [text]="oldJobsText"></app-previous-page>
+<app-messages-page *ngIf="isMessages"></app-messages-page>
+<app-profile-page *ngIf="isProfile"></app-profile-page>

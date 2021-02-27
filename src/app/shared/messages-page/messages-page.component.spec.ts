@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GuideProfilePageComponent } from './guide-profile-page.component';
+import { MessagesPageComponent } from './messages-page.component';
 
-describe('GuideProfilePageComponent', () => {
-  let component: GuideProfilePageComponent;
-  let fixture: ComponentFixture<GuideProfilePageComponent>;
+describe('MessagesPageComponent', () => {
+  let component: MessagesPageComponent;
+  let fixture: ComponentFixture<MessagesPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GuideProfilePageComponent ]
+      declarations: [ MessagesPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GuideProfilePageComponent);
+    fixture = TestBed.createComponent(MessagesPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

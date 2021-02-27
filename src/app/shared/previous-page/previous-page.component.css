@@ -1,16 +1,16 @@
-.old-jobs {
+.previous {
   width: 400px;
   margin: 16px auto;
   font-size: 16px;
 }
 
-.old-jobs-header,
-.old-jobs p {
+.previous-header,
+.previous p {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.old-jobs-header {
+.previous-header {
   background: rgb(12, 77, 129);
   padding: 20px;
   font-size: 1.4em;
@@ -20,7 +20,7 @@
   color: #fff;
 }
 
-.old-jobs-container {
+.previous-container {
   background: #ebebeb;
   padding: 12px;
 }
