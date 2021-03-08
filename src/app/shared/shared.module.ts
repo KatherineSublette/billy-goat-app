@@ -9,7 +9,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
     HomePageComponent,
     MessagesPageComponent,
     PreviousPageComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
   ],
   imports: [
   ],
@@ -17,7 +17,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
     HomePageComponent,
     MessagesPageComponent,
     PreviousPageComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
   ]
 })
 export class SharedModule { }

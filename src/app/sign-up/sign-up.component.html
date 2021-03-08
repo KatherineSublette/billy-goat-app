@@ -2,18 +2,18 @@
     <div class="sign-up">
       <h2 class="sign-up-header">Sign Up</h2>
       <div class="sign-up-container">
-        <div class = sign-up-text>Full Name</div>
-        <input type="fullName" (input)="fullName=$event.target.value">
-        <div class = sign-up-text>Username</div>
-        <input type="username" (input)="username=$event.target.value">
-        <div class = sign-up-text>Password</div>
-        <input (input)="password=$event.target.value">
+        <div class = sign-up-text>First Name</div>
+        <input type="text" (input)="firstname=$event.target.value">
+        <div class = sign-up-text>Last Name</div>
+        <input type="text" (input)="lastname=$event.target.value">
         <div class = sign-up-text>Email</div>
         <input type="email" (input)="email=$event.target.value">
+        <div class = sign-up-text>Password</div>
+        <input type="password" (input)="password=$event.target.value">
         <div>Sign up as Guest or Guide?</div>
-        <mat-radio-group aria-label="Select an option">
-          <mat-radio-button value="guest">Guest</mat-radio-button>
-          <mat-radio-button value="guide">Guide</mat-radio-button>
+        <mat-radio-group aria-label="Select an option" (input)="userType=$event.target.value">
+          <mat-radio-button value=0>Guest</mat-radio-button>
+          <mat-radio-button value=1>Guide</mat-radio-button>
         </mat-radio-group>
         <p>
             <button class="button" type="submit" (click)="onSubmit()">Sign Up</button>
