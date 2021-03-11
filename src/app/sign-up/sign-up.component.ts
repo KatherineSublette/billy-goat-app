@@ -88,7 +88,7 @@ export class SignUpComponent implements OnInit {
           (error) => {
             this.toastr.error('Error adding User.');
           }
-    )
+    );
   }
 
 }

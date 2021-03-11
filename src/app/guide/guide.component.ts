@@ -11,12 +11,14 @@ export class GuideComponent implements OnInit {
   isMessages = false;
   isProfile = false;
   homeText: string;
+  homeDisplay: string;
   oldJobsHeader: string;
   oldJobsText: string;
   constructor() { }
 
   ngOnInit(): void {
-    this.homeText = "This will eventually be a feed that displays all guests looking to hire guides for upcoming trips";
+    this.homeText = "Guests looking for a guide.";
+    this.homeDisplay = "guests";
     this.oldJobsHeader = "Old Jobs";
     this.oldJobsText = "No previous jobs to show";
   }

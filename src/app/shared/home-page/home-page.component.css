@@ -1,5 +1,5 @@
 .home-page {
-  width: 400px;
+  width: 800px;
   margin: 16px auto;
   font-size: 16px;
 }
@@ -23,4 +23,8 @@
 .home-page-container {
   background: #ebebeb;
   padding: 12px;
+}
+
+table {
+  width: 100%;
 }

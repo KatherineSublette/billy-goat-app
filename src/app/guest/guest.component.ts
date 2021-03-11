@@ -11,12 +11,14 @@ export class GuestComponent implements OnInit {
   isMessages = false;
   isProfile = false;
   homeText: string;
+  homeDisplay: string;
   oldTripsHeader: string;
   oldTripsText: string;
   constructor() { }
 
   ngOnInit(): void {
-    this.homeText = "This will eventually be a feed that displays all guides available during the guest's upcoming trip";
+    this.homeText = "Guides currently available";
+    this.homeDisplay = "guides";
     this.oldTripsHeader = "Old Trips";
     this.oldTripsText = "No previous Trips to show";
   }

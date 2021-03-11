@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';  
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -42,6 +43,7 @@ import { SharedModule } from './shared/shared.module'
     MatIconModule,
     MatButtonModule,
     MatTabsModule,
+    MatTableModule,
     SharedModule,
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
