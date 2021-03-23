@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -18,6 +18,10 @@ export class GuideService {
 
   getGuide(guideId: number): Observable<Guide> {
     return this.http.get<Guide>(this.apiBaseUrl + 'guide/' + guideId.toString());
+  }
+
+  getGuideByUserId(userId: number): Observable<Guide> {
+    return this.http.get<Guide>(this.apiBaseUrl + 'guide/?userId='+ userId);
   }
 
   addGuide(guide: Guide): Observable<Guide> {

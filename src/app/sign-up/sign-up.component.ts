@@ -44,13 +44,13 @@ export class SignUpComponent implements OnInit {
     user.email = this.email;
     user.username = this.email;
     user.password = this.password;
-    user.userType = parseInt(this.userType);
+    user.userType = this.userType;
 
     console.log(user.userType);
 
     this.userService.addUser(user).subscribe(
       (addedUser: User) => {
-        if(addedUser.userType === 0){
+        if(addedUser.userType === "Guest"){
           //guest
           let guest = new Guest();
           guest.firstName = this.firstname;

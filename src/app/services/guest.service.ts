@@ -21,6 +21,10 @@ export class GuestService {
     return this.http.get<Guest>(this.apiBaseUrl + 'guest/' + guestId.toString());
   }
 
+  getGuestByUserId(userId: number): Observable<Guest> {
+    return this.http.get<Guest>(this.apiBaseUrl + 'guest/?userId=' + userId);
+  }
+
   addGuest(guest: Guest): Observable<Guest> {
     return this.http.post<Guest>(this.apiBaseUrl + 'guest', guest);
   }

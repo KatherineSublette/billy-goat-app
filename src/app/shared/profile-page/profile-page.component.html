@@ -1,9 +1,8 @@
 <div class="profile">
     <h2 class="profile-header">Profile</h2>
     <div class="profile-container">
-      <div>Full Name: </div>
-      <div>Username: </div>
-      <div>Password: </div>
-      <div>Email: </div>
+      <div>Full Name: {{gUser[0].firstName + " " + gUser[0].lastName}}</div>
+      <div>Username/Email: {{user.email}}</div>
+      <div>{{user.userType}}</div>
     </div>
 </div>
