@@ -1,8 +1,23 @@
 <div class="profile">
-    <h2 class="profile-header">Profile</h2>
-    <div class="profile-container">
+    <h2 class="profile-header">Profile  <button md-raised-button class="icon-button" fxLayoutAlign="flex-end center" (click)="edit()">
+      <mat-icon>mode_edit_outline</mat-icon>
+  </button></h2>
+    <div class="profile-container" *ngIf="!isEdit">
       <div>Full Name: {{gUser[0].firstName + " " + gUser[0].lastName}}</div>
-      <div>Username/Email: {{user.email}}</div>
+      <div>Username/Email: {{user.email}} </div>
       <div>{{user.userType}}</div>
     </div>
+
+    <div class="edit-container" *ngIf="isEdit">
+      <div class = edit-text>First Name</div>
+      <input type="text" value={{gUser[0].firstName}} (input)="firstname=$event.target.value">
+      <div class = edit-text>Last Name</div>
+      <input type="text"  value={{gUser[0].lastName}} (input)="lastname=$event.target.value">
+      <div class = edit-text>Email</div>
+      <input type="email"  value={{user.email}} (input)="email=$event.target.value">
+      <p>
+          <button class="button" type="submit" (click)="onSave()">Save</button>
+      </p>
+    </div>
+
 </div>
