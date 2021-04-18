@@ -17,8 +17,8 @@ export class GuideHomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.homeText = "Guests looking for a guide.";
-    this.homeDisplay = "guests";
+    //this.homeText = "Guests looking for a guide.";
+    this.homeDisplay = "jobs";
     this.oldJobsHeader = "Old Jobs";
     this.oldJobsText = "No previous jobs to show";
   }
