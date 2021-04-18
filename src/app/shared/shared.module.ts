@@ -5,14 +5,14 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { CommonModule } from '@angular/common';  
 
-import { HomePageComponent } from './home-page/home-page.component';
+import { OpenJobPageComponent } from './open-job-page/open-job-page.component';
 import { MessagesPageComponent } from './messages-page/messages-page.component';
 import { PreviousPageComponent } from './previous-page/previous-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
-    HomePageComponent,
+    OpenJobPageComponent,
     MessagesPageComponent,
     PreviousPageComponent,
     ProfilePageComponent,
@@ -24,7 +24,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
     CommonModule
   ],
   exports: [
-    HomePageComponent,
+    OpenJobPageComponent,
     MessagesPageComponent,
     PreviousPageComponent,
     ProfilePageComponent,

@@ -6,10 +6,10 @@ import { GuideService } from 'src/app/services/guide.service';
 
 @Component({
   selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  templateUrl: './open-job-page.component.html',
+  styleUrls: ['./open-job-page.component.css']
 })
-export class HomePageComponent implements OnInit {
+export class OpenJobPageComponent implements OnInit {
   @Input() text: string;
   @Input() display: string;
   private users: any[];
