@@ -1,54 +1,53 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-guest',
-  templateUrl: './guest.component.html',
-  styleUrls: ['./guest.component.css']
+  selector: 'app-guide',
+  templateUrl: './guide-home.component.html',
+  styleUrls: ['./guide-home.component.css']
 })
-export class GuestComponent implements OnInit {
+export class GuideHomeComponent implements OnInit {
   isHome = true;
-  isOldTrip = false;
+  isOldJob = false;
   isMessages = false;
   isProfile = false;
   homeText: string;
   homeDisplay: string;
-  oldTripsHeader: string;
-  oldTripsText: string;
+  oldJobsHeader: string;
+  oldJobsText: string;
   constructor() { }
 
   ngOnInit(): void {
-    this.homeText = "Guides currently available";
-    this.homeDisplay = "guides";
-    this.oldTripsHeader = "Old Trips";
-    this.oldTripsText = "No previous Trips to show";
+    this.homeText = "Guests looking for a guide.";
+    this.homeDisplay = "guests";
+    this.oldJobsHeader = "Old Jobs";
+    this.oldJobsText = "No previous jobs to show";
   }
 
   toggleHome(): void{
     this.isHome = true;
-    this.isOldTrip = false;
+    this.isOldJob = false;
     this.isMessages = false;
     this.isProfile = false;
   }
 
-  toggleOldTrip(): void{
+  toggleOldJob(): void{
     this.isHome = false;
-    this.isOldTrip = true;
+    this.isOldJob = true;
     this.isMessages = false;
     this.isProfile = false;
   }
 
   toggleMessages(): void{
     this.isHome = false;
-    this.isOldTrip = false;
+    this.isOldJob = false;
     this.isMessages = true;
     this.isProfile = false;
   }
 
   toggleProfile(): void{
     this.isHome = false;
-    this.isOldTrip = false;
+    this.isOldJob = false;
     this.isMessages = false;
     this.isProfile = true;
   }
-
 }
