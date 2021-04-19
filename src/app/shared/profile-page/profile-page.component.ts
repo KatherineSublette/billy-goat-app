@@ -13,30 +13,33 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./profile-page.component.css']
 })
 export class ProfilePageComponent implements OnInit {
-  private user: User = JSON.parse(sessionStorage.getItem("user"));
-  private gUser: any;
+  //let obj = JSON.parse(jsonString);
+  private jwtUser: User = JSON.parse(sessionStorage.getItem("user"));
+  private guide: Guide;
+  private guest: Guest;
+  private user: User;
   private isEdit: boolean = false;
   firstname: string;
   lastname: string;
   email: string;
   constructor(private guestService: GuestService, private guideService: GuideService, private userService: UserService, private toastr: ToastrService) { 
-    if(this.user.userType  === 'Guide'){
-      this.guideService.getGuideByUserId(Number(this.user.userid)).subscribe(
+    this.user = JSON.parse(this.jwtUser.user);
+    this.firstname = this.user.firstName;
+    this.lastname = this.user.lastName;
+    this.email = this.user.email;
+    console.log(this.user);
+    if(this.user.userType === 1){
+      console.log(this.user);
+      this.guideService.getGuideByUserId(this.user.id).subscribe(
         (guide: Guide) => {
-          this.gUser = guide;
-          this.firstname = this.gUser[0].firstName;
-          this.lastname = this.gUser[0].lastName;
-          this.email = this.user.email;
+          this.guide = guide;
         }
       );
     }
     else{
-      this.guestService.getGuestByUserId(Number(this.user.userid)).subscribe(
+      this.guestService.getGuestByUserId(this.user.id).subscribe(
         (guest: Guest) => {
-          this.gUser = guest;
-          this.firstname = this.gUser[0].firstName;
-          this.lastname = this.gUser[0].lastName;
-          this.email = this.user.email;
+          this.guest = guest;
         }
       );
     }
@@ -58,17 +61,17 @@ export class ProfilePageComponent implements OnInit {
     this.user.firstName = this.firstname;
     this.user.lastName = this.lastname;
     this.user.email = this.email;
-
-
-    this.userService.addUser(this.user).subscribe(
+    
+    console.log(this.user)
+    this.userService.updateUser(this.user).subscribe(
       (updatedUser: User) => {
-        if(updatedUser.userType === "Guest"){
+        if(updatedUser.userType === 2){
           //guest
-          this.gUser[0].firstName = this.firstname;
-          this.gUser[0].lastName = this.lastname;
-          this.gUser[0].email = this.email;
+          this.guest.firstName = this.firstname;
+          this.guest.lastName = this.lastname;
+          this.guest.email = this.email;
 
-          this.guestService.updateGuest(this.gUser[0]).subscribe(
+          this.guestService.updateGuest(this.guest).subscribe(
             (updatedGuest: Guest) => {
               this.toastr.success('guest updated successfully');
               this.isEdit = false;
@@ -80,11 +83,12 @@ export class ProfilePageComponent implements OnInit {
         }
         else{
           //guide
-          this.gUser[0].firstName = this.firstname;
-          this.gUser[0].lastName = this.lastname;
-          this.gUser[0].email = this.email;
-          this.guideService.updateGuide(this.gUser[0]).subscribe(
-            (addedGuide: Guide) => {
+          console.log("")
+          this.guide.firstName = this.firstname;
+          this.guide.lastName = this.lastname;
+          this.guide.email = this.email;
+          this.guideService.updateGuide(this.guide).subscribe(
+            (updatedGuide: Guide) => {
               this.toastr.success('guide updated successfully');
               this.isEdit = false;
             },

@@ -18,7 +18,7 @@ export class GuestHomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.homeText = "Guides currently available";
-    this.homeDisplay = "guides";
+    this.homeDisplay = "myjobs";
     this.oldTripsHeader = "Old Trips";
     this.oldTripsText = "No previous Trips to show";
   }

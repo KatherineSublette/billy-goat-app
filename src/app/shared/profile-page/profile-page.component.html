@@ -3,16 +3,16 @@
       <mat-icon>mode_edit_outline</mat-icon>
   </button></h2>
     <div class="profile-container" *ngIf="!isEdit">
-      <div>Full Name: {{gUser[0].firstName + " " + gUser[0].lastName}}</div>
-      <div>Username/Email: {{user.email}} </div>
+      <div>Full Name: {{firstname + " " + lastname}}</div>
+      <div>Username/Email: {{email}} </div>
       <div>{{user.userType}}</div>
     </div>
 
     <div class="edit-container" *ngIf="isEdit">
       <div class = edit-text>First Name</div>
-      <input type="text" value={{gUser[0].firstName}} (input)="firstname=$event.target.value">
+      <input type="text" value={{user.firstName}} (input)="firstname=$event.target.value">
       <div class = edit-text>Last Name</div>
-      <input type="text"  value={{gUser[0].lastName}} (input)="lastname=$event.target.value">
+      <input type="text"  value={{user.lastName}} (input)="lastname=$event.target.value">
       <div class = edit-text>Email</div>
       <input type="email"  value={{user.email}} (input)="email=$event.target.value">
       <p>
