@@ -1,0 +1,39 @@
+.completed-trips-page {
+    width: 800px;
+    margin: 16px auto;
+    font-size: 16px;
+  }
+  
+  .completed-trips-page-header,
+  .completed-trips-page p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  .completed-trips-page-header {
+    background: rgb(12, 77, 129);
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  
+  .completed-trips-page-container {
+    background: #ebebeb;
+    padding: 12px;
+  }
+  
+  table {
+    width: 100%;
+  }
+
+  button {
+    background: rgb(1, 29, 51);
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  

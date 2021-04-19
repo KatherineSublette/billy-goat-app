@@ -12,12 +12,12 @@ import { JobService } from 'src/app/services/job.service';
   styleUrls: ['./my-trips-page.component.css']
 })
 export class MyTripsPageComponent implements OnInit {
-
   private jwtUser: User = JSON.parse(sessionStorage.getItem("user"));
   private user: User;
   private guest: Guest;
   private trips: Job[] = [];
-  private displayedColumns: string[] = ['name', 'resort', 'guest', 'date', 'complete', 'cancel'];
+  private noGuide: "Unclaimed";
+  private displayedColumns: string[] = ['name', 'resort', 'guide', 'date', 'cancel'];
   constructor( private jobService: JobService, private guestService: GuestService, private toastr: ToastrService) { 
     this.user = JSON.parse(this.jwtUser.user);
     this.guestService.getGuestByUserId(this.user.id).subscribe(
@@ -32,49 +32,37 @@ export class MyTripsPageComponent implements OnInit {
     this.guestService.getGuestByUserId(this.user.id).subscribe(
       (guest: Guest) => {
         this.guest = guest[0];
-        this.refreshJobs();
+        this.refreshTrips();
+        console.log(this.trips);
       }
     );
-  }
-
-  onComplete(job: Job): void {
-    job.completed = true;
-    job.guest = null;
-    job.guest = null;
-    job.resort = null;
-    this.jobService.updateJob(job).subscribe(
-      (job: Job) => {
-        this.toastr.success('You have completed this job');
-        this.refreshJobs();
-      }
-    );
-    (error) => {
-      this.toastr.error('Error completing this job.');
-    }
   }
 
   onCancel(job: Job): void {
-    job.guestId = null;
-    job.guest = null;
-    job.guest = null;
-    job.resort = null;
-    this.jobService.updateJob(job).subscribe(
+    this.jobService.deleteJob(job.id).subscribe(
       (job: Job) => {
-        this.toastr.success('You have cancelled this job');
-        this.refreshJobs();
+        this.toastr.success('You have deleted this job');
+        this.refreshTrips();
       }
     );
     (error) => {
       this.toastr.error('Error cancelling this job.');
     }
   }
-  refreshJobs(): void {
+
+  refreshTrips(): void {
     let filter = "?guestId=" + this.guest.id.toString() + "&completed=false";
+    console.log(filter)
     this.jobService.getJobs(filter).subscribe(
       (trips: Job[]) => {
         this.trips = trips
       }
     );
+  }
+
+  getGuide(trip: Job): string{
+    let guideName = (trip.guide?.firstName + ' ' + trip.guide?.lastName) || "No Guide";
+    return guideName;
   }
 
 }
