@@ -7,7 +7,7 @@
     </button>
     <button md-raised-button [ngClass]="{'icon-button-select': isOldTrip, 'icon-button': !isOldTrip}" fxLayoutAlign="flex-end center" (click)="toggleOldTrip()">
         <mat-icon>history</mat-icon>
-        <div>Previous Trips</div>
+        <div>Completed Trips</div>
     </button>
     <button md-raised-button [ngClass]="{'icon-button-select': isMessages, 'icon-button': !isMessages}" fxLayoutAlign="flex-end center" (click)="toggleMessages()">
         <mat-icon>message</mat-icon>
@@ -19,7 +19,7 @@
     </button>
   </mat-toolbar>
 </p>
-<app-home-page *ngIf="isHome" [text]="homeText" [display]="homeDisplay"></app-home-page>
-<app-previous-page *ngIf="isOldTrip" [header]="oldTripsHeader" [text]="oldTripsText"></app-previous-page>
+<app-my-trips-page *ngIf="isMyTrips"></app-my-trips-page>
+<app-completed-trips-page *ngIf="isCompletedTrips"></app-completed-trips-page>
 <app-messages-page *ngIf="isMessages"></app-messages-page>
 <app-profile-page *ngIf="isProfile"></app-profile-page>

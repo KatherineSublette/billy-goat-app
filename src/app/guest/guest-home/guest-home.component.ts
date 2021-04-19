@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./guest-home.component.css']
 })
 export class GuestHomeComponent implements OnInit {
-  isHome = true;
-  isOldTrip = false;
+  isMyTrips = true;
+  isCompletedTrips = false;
   isMessages = false;
   isProfile = false;
   homeText: string;
@@ -17,36 +17,32 @@ export class GuestHomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.homeText = "Guides currently available";
-    this.homeDisplay = "myjobs";
-    this.oldTripsHeader = "Old Trips";
-    this.oldTripsText = "No previous Trips to show";
   }
 
   toggleHome(): void{
-    this.isHome = true;
-    this.isOldTrip = false;
+    this.isMyTrips = true;
+    this.isCompletedTrips = false;
     this.isMessages = false;
     this.isProfile = false;
   }
 
   toggleOldTrip(): void{
-    this.isHome = false;
-    this.isOldTrip = true;
+    this.isMyTrips = false;
+    this.isCompletedTrips = true;
     this.isMessages = false;
     this.isProfile = false;
   }
 
   toggleMessages(): void{
-    this.isHome = false;
-    this.isOldTrip = false;
+    this.isMyTrips = false;
+    this.isCompletedTrips = false;
     this.isMessages = true;
     this.isProfile = false;
   }
 
   toggleProfile(): void{
-    this.isHome = false;
-    this.isOldTrip = false;
+    this.isMyTrips = false;
+    this.isCompletedTrips = false;
     this.isMessages = false;
     this.isProfile = true;
   }
