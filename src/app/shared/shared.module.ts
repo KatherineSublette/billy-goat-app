@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule} from '@angular/material/sidenav'
 import { MatButtonModule } from '@angular/material/button';  
+import { MatButtonToggleModule } from '@angular/material/button-toggle';  
+import { MatGridListModule} from '@angular/material/grid-list';  
 
 import { CommonModule } from '@angular/common';  
 
@@ -20,7 +23,10 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
   imports: [
     MatTableModule,
     MatIconModule,
+    MatSidenavModule,
     MatButtonModule,
+    MatButtonToggleModule,
+    MatGridListModule,
     CommonModule
   ],
   exports: [

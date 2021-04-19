@@ -1,6 +1,58 @@
 <div class="messages">
     <h2 class="messages-header">Messages</h2>
     <div class="messages-container">
-      No messages to display
+      <div>
+        <button class="button" type="newMessage" (click)="onNewMessage()">New Message</button>
+        <mat-drawer-container class="example-container">
+          <mat-drawer mode="side" opened class="drawer-container">
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style" vertical>
+              <mat-button-toggle class="button-message" *ngFor="let message of messages" (click)="onClick(message)">
+                <div>{{message.sender.firstName + " " + message.sender.lastName}}</div>
+                <div>{{message.subject}}</div>
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+          </mat-drawer>
+          <mat-drawer-content class="body-container">
+            <div *ngIf="isNewMessage && !isReply">
+              <div class = sign-up-text>To:</div>
+              <input type="text" (input)="recipientEmail=$event.target.value">
+              <div class = sign-up-text>Subject:</div>
+              <input type="text" (input)="newSubject=$event.target.value">
+              <div>Body:</div>
+              <textarea class="body-text-field" (input)="newBody=$event.target.value"></textarea>
+              <p>
+                <button class="button" type="send" (click)="onSend()">Send</button>
+              </p>
+            </div>
+            <div *ngIf="!isNewMessage && isReply">
+              <div class = sign-up-text>To:</div>
+              <input type="text" value={{sender.email}} (input)="recipientEmail=$event.target.value">
+              <div class = sign-up-text>Subject:</div>
+              <input type="text" value={{subject}} (input)="newSubject=$event.target.value">
+              <div>Body:</div>
+              <textarea class="body-text-field" (input)="newBody=$event.target.value"></textarea>
+              <p>
+                <button class="button" type="send" (click)="onSend()">Send</button>
+              </p>
+            </div>
+            <div *ngIf="!isNewMessage || isReply">
+              <div *ngIf="subject!=null">
+                <h3>
+                  <span class="flexExpand">{{sender.firstName + " " + sender.lastName}}</span>
+                  <button fxLayoutAlign="flex-end" (click)="onReply()">
+                    <mat-icon>reply</mat-icon>
+                  </button>
+                </h3>
+                <h5>{{date}}</h5>
+                <h4>{{subject}}</h4>
+                <div>{{body}}</div>
+              </div>
+              <div *ngIf="subject==null">
+                {{body}}
+              </div>
+            </div>
+            </mat-drawer-content>
+          </mat-drawer-container>
+        </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 .messages {
-  width: 400px;
+  width: 800px;
   margin: 16px auto;
   font-size: 16px;
 }
@@ -24,3 +24,60 @@
   background: #ebebeb;
   padding: 12px;
 }
+
+.example-container {
+  width: auto;
+  height: 400px;
+  margin: 10px;
+  border: 1px solid #555;
+}
+
+.drawer-container {
+  width: 200px;
+  background: rgb(15, 66, 107);
+  color: #fff;
+  padding: 12px;
+}
+
+.body-container {
+  width: flex;
+  height: flex;
+  padding: 12px;
+}
+
+.mat-button-toggle {
+  width: flex;
+  height: flex;
+  border: 1px solid rgb(0, 0, 0);
+  background: rgb(15, 66, 107);
+  color: #fff;
+}
+
+.mat-button-toggle-checked{
+  width: flex;
+  height: flex;
+  border: 1px solid rgb(0, 0, 0);
+  background: rgb(1, 29, 51);
+  color: #fff;
+}
+
+.time-container {
+  align-self: right;
+}
+
+.flexExpand {
+  flex: 1 1 auto;
+}
+
+.body-text-field {
+  width: 500px;
+  height: 200px;
+}
+
+button {
+  background: rgb(1, 29, 51);
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+

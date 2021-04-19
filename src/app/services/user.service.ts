@@ -11,9 +11,15 @@ export class UserService {
   private apiBaseUrl = 'http://localhost:5000/api/';
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<User[]> {
-    return this.http
-      .get<User[]>(this.apiBaseUrl + 'user');
+  getUsers(filter?: string): Observable<User[]> {
+    if(filter != undefined){
+      return this.http
+        .get<User[]>(this.apiBaseUrl + 'user' + filter);
+    }
+    else{
+      return this.http
+        .get<User[]>(this.apiBaseUrl + 'user');
+    }
   }
 
   getUser(userId: number): Observable<User> {
