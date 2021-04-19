@@ -1,0 +1,31 @@
+.my-jobs-page {
+    width: 800px;
+    margin: 16px auto;
+    font-size: 16px;
+  }
+  
+  .my-jobs-page-header,
+  .my-jobs-page p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  .my-jobs-page-header {
+    background: rgb(12, 77, 129);
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  
+  .my-jobs-page-container {
+    background: #ebebeb;
+    padding: 12px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  

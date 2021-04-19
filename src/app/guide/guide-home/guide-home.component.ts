@@ -7,24 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuideHomeComponent implements OnInit {
   isHome = true;
+  isMyJobs = false;
   isOldJob = false;
   isMessages = false;
   isProfile = false;
-  homeText: string;
-  homeDisplay: string;
   oldJobsHeader: string;
   oldJobsText: string;
   constructor() { }
 
   ngOnInit(): void {
-    //this.homeText = "Guests looking for a guide.";
-    this.homeDisplay = "jobs";
     this.oldJobsHeader = "Old Jobs";
     this.oldJobsText = "No previous jobs to show";
   }
 
   toggleHome(): void{
     this.isHome = true;
+    this.isMyJobs = false;
+    this.isOldJob = false;
+    this.isMessages = false;
+    this.isProfile = false;
+  }
+
+  toggleMyJobs(): void{
+    this.isHome = false;
+    this.isMyJobs = true;
     this.isOldJob = false;
     this.isMessages = false;
     this.isProfile = false;
@@ -32,6 +38,7 @@ export class GuideHomeComponent implements OnInit {
 
   toggleOldJob(): void{
     this.isHome = false;
+    this.isMyJobs = false;
     this.isOldJob = true;
     this.isMessages = false;
     this.isProfile = false;
@@ -39,6 +46,7 @@ export class GuideHomeComponent implements OnInit {
 
   toggleMessages(): void{
     this.isHome = false;
+    this.isMyJobs = false;
     this.isOldJob = false;
     this.isMessages = true;
     this.isProfile = false;
@@ -46,6 +54,7 @@ export class GuideHomeComponent implements OnInit {
 
   toggleProfile(): void{
     this.isHome = false;
+    this.isMyJobs = false;
     this.isOldJob = false;
     this.isMessages = false;
     this.isProfile = true;

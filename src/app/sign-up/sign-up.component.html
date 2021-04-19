@@ -12,8 +12,8 @@
         <input type="password" (input)="password=$event.target.value">
         <div>Sign up as Guest or Guide?</div>
         <mat-radio-group aria-label="Select an option" (input)="userType=$event.target.value">
-          <mat-radio-button value="Guest">Guest</mat-radio-button>
-          <mat-radio-button value="Guide">Guide</mat-radio-button>
+          <mat-radio-button value=0>Guest</mat-radio-button>
+          <mat-radio-button value=1>Guide</mat-radio-button>
         </mat-radio-group>
         <p>
             <button class="button" type="submit" (click)="onSubmit()">Sign Up</button>

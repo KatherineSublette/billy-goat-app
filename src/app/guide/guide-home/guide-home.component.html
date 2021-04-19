@@ -5,6 +5,10 @@
         <mat-icon>home</mat-icon>
         <div>Home</div>
     </button>
+    <button md-raised-button [ngClass]="{'icon-button-select': isMyJobs, 'icon-button': !isMyJobs}" fxLayoutAlign="flex-end center" (click)="toggleMyJobs()">
+        <mat-icon>event</mat-icon>
+        <div>My Jobs</div>
+    </button>
     <button md-raised-button [ngClass]="{'icon-button-select': isOldJob, 'icon-button': !isOldJob}" fxLayoutAlign="flex-end center" (click)="toggleOldJob()">
         <mat-icon>history</mat-icon>
         <div>Previous Jobs</div>
@@ -19,7 +23,8 @@
     </button>
   </mat-toolbar>
 </p>
-<app-home-page *ngIf="isHome" [text]="homeText" [display]="homeDisplay"></app-home-page>
-<app-previous-page *ngIf="isOldJob" [header]="oldJobsHeader" [text]="oldJobsText"></app-previous-page>
+<app-open-job-page *ngIf="isHome"></app-open-job-page>
+<app-my-jobs-page *ngIf="isMyJobs"></app-my-jobs-page>
+<app-previous-page *ngIf="isOldJob" [header]="oldJobsHeader"></app-previous-page>
 <app-messages-page *ngIf="isMessages"></app-messages-page>
 <app-profile-page *ngIf="isProfile"></app-profile-page>

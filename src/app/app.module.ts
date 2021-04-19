@@ -19,17 +19,20 @@ import { AppComponent } from './app.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { GuestHomeComponent } from './guest/guest-home/guest-home.component';
 import { GuideHomeComponent } from './guide/guide-home/guide-home.component';
+import { MyJobsPageComponent } from './guide/my-jobs-page/my-jobs-page.component';
 import { AuthService } from './services/auth.service';
 import { JwtInterceptor } from './shared/jwt.interceptor';
 
-import { SharedModule } from './shared/shared.module'
+import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
     GuestHomeComponent,
-    GuideHomeComponent
+    GuideHomeComponent,
+    MyJobsPageComponent
   ],
   imports: [
     BrowserModule,

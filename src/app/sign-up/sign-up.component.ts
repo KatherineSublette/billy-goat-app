@@ -32,7 +32,7 @@ export class SignUpComponent implements OnInit {
   lastname: string;
   email: string;
   password: string;
-  userType: string;
+  userType: number;
 
   ngOnInit(): void {
   }
@@ -50,7 +50,7 @@ export class SignUpComponent implements OnInit {
 
     this.userService.addUser(user).subscribe(
       (addedUser: User) => {
-        if(addedUser.userType === "Guest"){
+        if(addedUser.userType === 0){
           //guest
           let guest = new Guest();
           guest.firstName = this.firstname;

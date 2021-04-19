@@ -9,13 +9,11 @@ import { JobService } from 'src/app/services/job.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-home-page',
+  selector: 'app-open-job-page',
   templateUrl: './open-job-page.component.html',
   styleUrls: ['./open-job-page.component.css']
 })
 export class OpenJobPageComponent implements OnInit {
-  @Input() text: string;
-  @Input() display: string;
   private jwtUser: User = JSON.parse(sessionStorage.getItem("user"));
   private user: User;
   private guide: Guide;
@@ -25,22 +23,16 @@ export class OpenJobPageComponent implements OnInit {
     this.user = JSON.parse(this.jwtUser.user);
     this.guideService.getGuideByUserId(this.user.id).subscribe(
       (guide: Guide) => {
-        console.log(guide);
         this.guide = guide[0];
       }
     );
   }
 
   ngOnInit(): void {  
-    console.log(this.display);
-    if(this.display === "jobs"){
       this.refreshJobs();
-    }
   }
 
   onAccept(job: Job): void {
-    console.log(job);
-    console.log(this.guide);
     job.guideId = this.guide.id;
     job.guest = null;
     job.guide = null;

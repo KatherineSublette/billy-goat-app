@@ -1,16 +1,16 @@
-.previous {
-  width: 400px;
+.previous-page {
+  width: 800px;
   margin: 16px auto;
   font-size: 16px;
 }
 
-.previous-header,
-.previous p {
+.previous-page-header,
+.previous-page p {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.previous-header {
+.previous-page-header {
   background: rgb(12, 77, 129);
   padding: 20px;
   font-size: 1.4em;
@@ -20,7 +20,11 @@
   color: #fff;
 }
 
-.previous-container {
+.previous-page-container {
   background: #ebebeb;
   padding: 12px;
+}
+
+table {
+  width: 100%;
 }
