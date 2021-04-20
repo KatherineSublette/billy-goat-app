@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import {MatDialog} from '@angular/material/dialog';
+
 import { Guest } from 'src/app/models/guest.model';
 import { Job } from 'src/app/models/job.model';
 import { User } from 'src/app/models/user.model';
+
 import { GuestService } from 'src/app/services/guest.service';
 import { JobService } from 'src/app/services/job.service';
+import { NewJobModalComponent } from '../new-job-modal/new-job-modal.component';
 
 @Component({
   selector: 'app-my-trips-page',
@@ -18,7 +22,10 @@ export class MyTripsPageComponent implements OnInit {
   private trips: Job[] = [];
   private noGuide: "Unclaimed";
   private displayedColumns: string[] = ['name', 'resort', 'guide', 'date', 'cancel'];
-  constructor( private jobService: JobService, private guestService: GuestService, private toastr: ToastrService) { 
+  constructor( private jobService: JobService, 
+    private guestService: GuestService, 
+    private toastr: ToastrService,
+    public dialog: MatDialog) { 
     this.user = JSON.parse(this.jwtUser.user);
     this.guestService.getGuestByUserId(this.user.id).subscribe(
       (guest: Guest) => {
@@ -63,6 +70,15 @@ export class MyTripsPageComponent implements OnInit {
   getGuide(trip: Job): string{
     let guideName = (trip.guide?.firstName + ' ' + trip.guide?.lastName) || "No Guide";
     return guideName;
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(NewJobModalComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.refreshTrips();
+    });
   }
 
 }

@@ -1,7 +1,7 @@
 <div class="my-trips-page">
     <h2 class="my-trips-page-header">My Trips</h2>
     <div class="my-trips-page-container">
-        <button class="button">New Trip</button>
+      <button mat-raised-button color="primary" (click)="openDialog()">New Trip</button>
       <table mat-table [dataSource]="trips" class="mat-elevation-z8" *ngIf="trips.length > 0">
 
         <!--- Note that these columns can be defined in any order.
@@ -33,7 +33,7 @@
         <ng-container matColumnDef="cancel">
             <th mat-header-cell *matHeaderCellDef> Cancel </th>
             <td mat-cell *matCellDef="let trip"> 
-              <button (click)="onCancel(trip)">Cancel</button>
+              <button mat-raised-button color="primary" (click)="onCancel(trip)">Cancel</button>
             </td>
           </ng-container>
 
