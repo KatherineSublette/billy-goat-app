@@ -44,7 +44,7 @@ export class SignUpComponent implements OnInit {
     user.email = this.email;
     user.username = this.email;
     user.password = this.password;
-    user.userType = this.userType;
+    user.userType = parseInt(this.userType.toString());
 
     console.log(user.userType);
 
@@ -63,7 +63,8 @@ export class SignUpComponent implements OnInit {
               this.router.navigateByUrl('/login');
             },
             (error) => {
-              this.toastr.error('Error adding User.');
+              console.log(error);
+              this.toastr.error('Error adding Guest.');
             }
           )
         }

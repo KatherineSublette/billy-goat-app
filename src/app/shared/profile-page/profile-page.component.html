@@ -16,7 +16,7 @@
       <div class = edit-text>Email</div>
       <input type="email"  value={{user.email}} (input)="email=$event.target.value">
       <p>
-          <button class="button" type="submit" (click)="onSave()">Save</button>
+          <button  mat-raised-button color="primary" (click)="onSave()">Save</button>
       </p>
     </div>
 

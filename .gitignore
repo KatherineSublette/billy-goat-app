@@ -35,3 +35,5 @@ testem.log
 .DS_Store
 Thumbs.db
 /.vscode
+.vs/billy-goats-api/v16/.suo
+.vs/billy-goats-api/DesignTimeBuild/.dtbcache.v2

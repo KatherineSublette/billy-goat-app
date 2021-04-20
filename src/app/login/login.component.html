@@ -4,19 +4,31 @@
 </h1>
     <div class="login">
       <h2 class="login-header">Log in</h2>
-      <div class="login-container">
-        <input type="username" placeholder="Username" (input)="username=$event.target.value">
-        <input type="password" placeholder="Password" (input)="password=$event.target.value">
-        <p>
-          <button class="button" type="submit" (click)="onSubmit()">Log In</button>
-        </p>
-        <div class="login-error" [hidden] = "!isWrong">
-          <p>
-          Invalid Username or Password
-          </p>
+      <form [formGroup]="form" class="login-container">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput placeholder="name@domain.com" formControlName="username" required>
+          <mat-error>
+            Please provide a valid username, must be an email address
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="password" formControlName="password">
+          <mat-error>
+            Please provide a valid password
+          </mat-error>
+        </mat-form-field>
+        <div>
+          <button mat-raised-button color="primary" (click)="onSubmit()">Log in</button>
         </div>
-        <p>
-          Don't have an account? <button class="button" (click)="onSignUp()">Sign Up</button>
-        </p>
-      </div>
+        <div class="login-error" [hidden] = "!isWrong">
+          <div>
+          Invalid Username or Password
+          </div>
+        </div>
+        <div>
+          Don't have an account? <button mat-raised-button color="primary" (click)="onSignUp()">Sign Up</button> 
+        </div>
+      </form>
   </div>
